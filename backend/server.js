@@ -5,6 +5,13 @@ const upload = multer({ dest: "uploads/" });
 import { v2 as cloudinary } from "cloudinary";
 import "dotenv/config";
 
+// configure for cloudinary
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
+});
+
 const app = express(); // configure the server
 
 app.use(express.json()); // middleware (for json)
@@ -52,7 +59,8 @@ app.post("/mealMaster", upload.single("image"), async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "Internal server error"
+            message: "Internal server error",
+            error: error.message,
         });
     }
 });
