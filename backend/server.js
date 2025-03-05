@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import "dotenv/config";
 import mealMasterRoute from "./routes/mealMasterRoute.js";
+import userRoute from "./routes/userRoute.js";
 
 const router = express.Router();
 
@@ -18,6 +19,7 @@ try {
 }
 
 app.use("/mealMaster", mealMasterRoute);
+app.use("/users", userRoute);
 
 app.listen(4000, () => {
     console.log(`Example app listening on port ${process.env.APP_PORT}`);
