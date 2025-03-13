@@ -3,7 +3,7 @@ import logo from "../../public/logo.png";
 
 export default function SecondNavBar() {
   return (
-    <div className="flex items-center justify-between w-10/12 mx-auto cursor-pointer bg-white text-black">
+    <div className="flex items-center justify-between w-10/12 mx-auto cursor-pointer bg-white text-black sticky top-0">
       <div className="flex items-center justify-between gap-4 ">
         {/* <NavLink to="/">Home</NavLink>
         <NavLink to="/pages">Pages</NavLink>
