@@ -9,7 +9,7 @@ export const app = express(); // configure the server
 
 app.use(express.json()); // middleware (for json)
 
-// connect to mongodb database
+// connect to database
 try {
     mongoose.connect("mongodb+srv://joshiprabin17:QJZbtY9IIagET6cw@cluster0.i5iob.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     console.log("MongoDB Connection Success");
