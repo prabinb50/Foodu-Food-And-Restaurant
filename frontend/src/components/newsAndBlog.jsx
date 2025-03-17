@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function NewsAndBlog() {
     return (
-        <div className='p-4 md:p-10 lg:p-20'>
+        <div className='w-11/12 md:w-10/12 lg:w-10/12 mx-auto mt-10 md:mt-20'>
             {/* first child */}
             <div className="font-serif flex items-center justify-between flex-col text-center md:text-left">
                 <div className="flex justify-between items-center space-x-2">

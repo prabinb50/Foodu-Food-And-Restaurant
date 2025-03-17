@@ -5,6 +5,7 @@ import SecondNavBar from './components/secondNavBar'
 import HeroSection from './components/heroSection'
 import MenuSection from './components/menuSection'
 import NewsAndBlog from './components/newsAndBlog'
+// import BlogSectionLeft from './components/blogSectionLeft'
 
 export default function App() {
   return (
@@ -14,6 +15,8 @@ export default function App() {
       <HeroSection></HeroSection>
       <MenuSection></MenuSection>
       <NewsAndBlog></NewsAndBlog>
+
+      {/* <BlogSectionLeft></BlogSectionLeft> */}
     </div>
   )
 }

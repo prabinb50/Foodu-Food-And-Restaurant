@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function FirstNavbar() {
     return (
-        <div className='bg-gray-800 p-3 '>
+        <div className='bg-neutral-800 p-3 '>
             <div className='flex items-center justify-between text-white w-11/12 mx-auto cursor-pointer '>
                 {/* left child */}
                 <img src="./envato_market.svg" alt="" className='w-35' />

@@ -3,7 +3,7 @@ import { MoveLeft, MoveRight } from "lucide-react";
 
 export default function MenuSection() {
   return (
-    <div className="bg-neutral-900 font-serif text-white p-20">
+    <div className=" bg-neutral-900 font-serif text-white p-20">
 
       <div className="flex flex-col justify-between items-center">
         <div className="flex justify-between items-center">
