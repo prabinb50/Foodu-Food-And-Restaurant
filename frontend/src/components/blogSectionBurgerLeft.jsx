@@ -1,7 +1,7 @@
 import { Dot, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 import React, { useState } from 'react'
 
-export default function BlogSectionLeft() {
+export default function BlogSectionBurgerLeft() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');

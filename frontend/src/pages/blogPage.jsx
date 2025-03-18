@@ -1,8 +1,8 @@
 import React from 'react'
-import BlogSectionLeft from '../components/blogSectionLeft'
 import { ChevronRight, Home } from 'lucide-react'
 import { NavLink } from 'react-router'
 import BlogSectionBurgerRight from '../components/blogSectionBurgerRight'
+import BlogSectionBurgerLeft from '../components/blogSectionBurgerLeft'
 
 export default function BlogPage() {
     return (
@@ -25,7 +25,7 @@ export default function BlogPage() {
             <div className='mt-25'>
                 <div className=' flex flex-col md:flex-row w-10/12 mx-auto justify-between gap-10 '>
                     <div className='md:w-8/12 w-full'>
-                        <BlogSectionLeft />
+                        <BlogSectionBurgerLeft></BlogSectionBurgerLeft>
                     </div>
 
                     <div className='md:w-4/12 w-full'>
