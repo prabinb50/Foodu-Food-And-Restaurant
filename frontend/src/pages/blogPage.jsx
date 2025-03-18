@@ -1,12 +1,12 @@
 import React from 'react'
 import BlogSectionLeft from '../components/blogSectionLeft'
-import BlogSectionRight from '../components/blogSectionRight'
 import { ChevronRight, Home } from 'lucide-react'
 import { NavLink } from 'react-router'
+import BlogSectionBurgerRight from '../components/blogSectionBurgerRight'
 
 export default function BlogPage() {
     return (
-        <div>
+        <div className='bg-gray-100'>
             <div className='bg-neutral-800 p-25 text-center space-y-4'>
                 <h1 className='text-6xl text-white font-semibold'>Blog Sidebar</h1>
 
@@ -22,14 +22,14 @@ export default function BlogPage() {
             </div>
 
 
-            <div className='bg-gray-50 mt-25'>
+            <div className='mt-25'>
                 <div className=' flex flex-col md:flex-row w-10/12 mx-auto justify-between gap-10 '>
                     <div className='md:w-8/12 w-full'>
                         <BlogSectionLeft />
                     </div>
 
                     <div className='md:w-4/12 w-full'>
-                        <BlogSectionRight />
+                        <BlogSectionBurgerRight></BlogSectionBurgerRight>
                     </div>
                 </div>
             </div>
