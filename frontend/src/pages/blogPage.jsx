@@ -3,15 +3,10 @@ import BlogSectionLeft from '../components/blogSectionLeft'
 import BlogSectionRight from '../components/blogSectionRight'
 import { ChevronRight, Home } from 'lucide-react'
 import { NavLink } from 'react-router'
-import SecondNavBar from '../components/secondNavBar'
-import FirstNavbar from '../components/firstNavbar'
 
 export default function BlogPage() {
     return (
         <div>
-            <FirstNavbar></FirstNavbar>
-            <SecondNavBar></SecondNavBar>
-
             <div className='bg-neutral-800 p-25 text-center space-y-4'>
                 <h1 className='text-6xl text-white font-semibold'>Blog Sidebar</h1>
 
