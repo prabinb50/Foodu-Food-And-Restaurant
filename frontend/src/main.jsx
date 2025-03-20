@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter } from 'react-router'
 import BlogPage from './pages/blogPage.jsx'
 import FirstNavbar from './components/firstNavbar.jsx'
 import SecondNavBar from './components/secondNavBar.jsx'
+import Footer from './components/footer.jsx'
 
 export function Root() {
   return (
@@ -17,6 +18,11 @@ export function Root() {
         <Route path="/" element={<App />} />
         <Route path="/blog" element={<BlogPage></BlogPage>} />
       </Routes>
+
+      <div className='bg-gray-100 pb-10'>
+        <Footer></Footer>
+      </div>
+
     </StrictMode>
   )
 }

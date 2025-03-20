@@ -8,7 +8,7 @@ import SpecialLunch from './components/specialLunch'
 
 export default function App() {
   return (
-    <div>
+    <div className='bg-gray-100'>
       <HeroSection></HeroSection>
       <MenuSection></MenuSection>
       <SpecialLunch></SpecialLunch>

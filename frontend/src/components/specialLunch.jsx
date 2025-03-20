@@ -44,9 +44,9 @@ export default function SpecialLunch() {
       modules={[Pagination, Navigation, Autoplay]}
       className="mySwiper"
     >
-      {menuItems.map((eachItem, index)=>(
+      {menuItems.map((eachItem, index) => (
         <SwiperSlide key={index}>
-          <div className="grid grid-cols-2 gap-12 items-center justify-between w-11/12 md:w-10/12 lg:w-10/12 mx-auto mt-10 md:mt-20">
+          <div className="grid grid-cols-2 gap-12 items-center justify-between w-11/12 md:w-10/12 lg:w-10/12 mx-auto mt-10 md:mt-20 ">
             <div>
               <p className="font-serif text-6xl font-semibold">
                 SUPER DEAL <br />
@@ -72,7 +72,7 @@ export default function SpecialLunch() {
               </div>
             </div>
           </div>
-      </SwiperSlide>
+        </SwiperSlide>
       ))}
     </Swiper>
   );

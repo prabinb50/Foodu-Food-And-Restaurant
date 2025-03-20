@@ -98,7 +98,7 @@ export default function BlogSectionBurgerLeft() {
                 </div>
             </div>
 
-            <form onSubmit={handleSubmit} className='space-y-5'>
+            <form onSubmit={handleSubmit} className='space-y-5 pb-20'>
                 <p className='font-semibold text-3xl'>Leave a comments</p>
                 <input
                     type="text"
