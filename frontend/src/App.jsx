@@ -4,6 +4,7 @@ import HeroSection from './components/heroSection'
 import MenuSection from './components/menuSection'
 import NewsAndBlog from './components/newsAndBlog'
 import SpecialLunch from './components/specialLunch'
+import Reservation from './components/reservation'
 // import BlogSectionLeft from './components/blogSectionLeft'
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <HeroSection></HeroSection>
       <MenuSection></MenuSection>
       <SpecialLunch></SpecialLunch>
+      <Reservation></Reservation>
       <NewsAndBlog></NewsAndBlog>
 
       {/* <BlogSectionLeft></BlogSectionLeft> */}
