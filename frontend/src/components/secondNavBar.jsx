@@ -6,7 +6,7 @@ export default function SecondNavBar() {
   return (
     <div className="bg-white sticky top-12 z-40">
       <div className="w-10/12 mx-auto flex items-center justify-between cursor-pointer  text-black ">
-        <div className="flex items-center justify-between gap-4 font-semibold text-lg opacity-80">
+        <div className="flex items-center justify-between gap-4 font-semibold text-lg opacity-85">
           <NavLink to="/" className="hover:text-red-500">Home</NavLink>
           <p className="hover:text-red-500">Pages</p>
           <p className="hover:text-red-500">Menu</p>
@@ -16,7 +16,7 @@ export default function SecondNavBar() {
           <img src={logo} alt="logo" />
         </div>
 
-        <div className="flex items-center justify-between gap-4 font-semibold text-lg opacity-80">
+        <div className="flex items-center justify-between gap-4 font-semibold text-lg opacity-85">
           <NavLink to="/blog" className="hover:text-red-500">Blog</NavLink>
           <p className="hover:text-red-500">Shop</p>
           <p className="hover:text-red-500">Contact</p>

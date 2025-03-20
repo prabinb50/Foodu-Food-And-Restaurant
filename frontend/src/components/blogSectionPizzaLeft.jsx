@@ -1,7 +1,7 @@
 import { Dot, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 import React, { useState } from 'react'
 
-export default function BlogSectionBurgerLeft() {
+export default function BlogSectionPizzaLeft() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');
@@ -15,8 +15,8 @@ export default function BlogSectionBurgerLeft() {
     }
     return (
         <div className=' space-y-7'>
-            <img src="/burger.jpg" alt="" className='rounded-md w-180 h-90 object-cover' />
-            <p className='opacity-70 font-semibold flex cursor-pointer'>12 AUGUST, 2024 <span className='flex hover:text-red-500 hover:opacity-90'><Dot />MD SOHAG</span></p>
+            <img src="/blog_pizza.jpg" alt="" className='rounded-md w-180 h-90 object-cover' />
+            <p className='opacity-70 font-semibold flex cursor-pointer '>14 AUGUST, 2024 <span className='flex hover:text-red-500 hover:opacity-90'><Dot />MD SOHAG</span></p>
 
             <p className='opacity-65'>Give lady of they such they sure it. Me contained explained my education. Vulgar as hearts by garret. Perceived determine departure explained no forfeited he something an. Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her.</p>
             <p className='opacity-65 '>New had happen unable uneasy. Drawings can followed improved out sociable not. Earnestly so do instantly pretended. See general few civilly amiable pleased account carried. Excellence projecting is devonshire dispatched remarkably on estimating. Side in so life past. Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.</p>

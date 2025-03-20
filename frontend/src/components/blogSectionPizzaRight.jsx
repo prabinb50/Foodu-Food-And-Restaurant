@@ -2,7 +2,7 @@ import { Facebook, Folder, Instagram, Linkedin, Search, Twitter } from 'lucide-r
 import React from 'react'
 import { NavLink } from 'react-router'
 
-export default function BlogSectionBurgerRight() {
+export default function BlogSectionPizzaRight() {
     return (
         <div className=''>
             <div className='border-none bg-[#EBE9E6] p-10'>
@@ -18,6 +18,7 @@ export default function BlogSectionBurgerRight() {
 
                 <div className='flex flex-col space-y-4'>
                     <div className='flex items-start space-x-4'>
+                        {/* <img src='/burger.jpg' alt='Post 1' className='w-20 h-16 object-cover rounded-md cursor-pointer' /> */}
                         <NavLink to="/blog">
                             <img src='/burger.jpg' alt='Post 1' className='w-45 h-16 object-cover rounded-md cursor-pointer' />
                         </NavLink>

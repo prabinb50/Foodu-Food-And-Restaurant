@@ -2,7 +2,7 @@ import { Facebook, Folder, Instagram, Linkedin, Search, Twitter } from 'lucide-r
 import React from 'react'
 import { NavLink } from 'react-router'
 
-export default function BlogSectionBurgerRight() {
+export default function BlogSectionFoodRight() {
     return (
         <div className=''>
             <div className='border-none bg-[#EBE9E6] p-10'>
