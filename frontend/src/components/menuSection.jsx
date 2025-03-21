@@ -29,7 +29,7 @@ export default function MenuSection() {
       <div className="flex flex-col justify-between items-center">
         <div className="flex justify-between items-center">
           <MoveLeft color="red" />
-          <p className="text-xl">FOOD MENU </p>
+          <p className="text-xl">FOOD MENU</p>
           <MoveRight color="red" />
         </div>
         <p className="text-5xl font-semibold">Discover Our Menu</p>
