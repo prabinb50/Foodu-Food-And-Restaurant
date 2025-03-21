@@ -19,7 +19,7 @@ export default function SecondNavBar() {
         <div className="flex items-center justify-between gap-4 font-semibold text-lg opacity-85">
           <NavLink to="/blog" className="hover:text-red-500">Blog</NavLink>
           <p className="hover:text-red-500">Shop</p>
-          <p className="hover:text-red-500">Contact</p>
+          <NavLink to="/contact-us" className="hover:text-red-500">Contact</NavLink>
         </div>
       </div>
     </div>
