@@ -11,7 +11,7 @@ export default function BlogPage() {
                 <h1 className='text-6xl text-white font-semibold'>Blog Sidebar</h1>
 
                 <div className='flex items-center justify-center text-white font-semibold space-x-2'>
-                    <Home color='white' className='cursor-pointer' />
+                    {/* <Home color='white' className='cursor-pointer' /> */}
                     <NavLink to="/" className='cursor-pointer'>Home</NavLink >
 
                     <div className='flex items-center'>
@@ -34,6 +34,5 @@ export default function BlogPage() {
                 </div>
             </div>
         </div>
-
     )
 }
