@@ -26,6 +26,8 @@ export function Root() {
         <Route path="/blog-pizza" element={<BlogPizzaPage></BlogPizzaPage>} />
         <Route path="/contact-us" element={<ContactUs></ContactUs>} />
         <Route path="/shop" element={<ShopPage></ShopPage>} />
+        <Route path="/pages" element={<App />} />
+        <Route path="/menu" element={<App />} />
 
       </Routes>
 

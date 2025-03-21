@@ -133,13 +133,13 @@ export default function ContactUs() {
               className="w-full p-3 bg-neutral-100 border border-neutral-100 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
             ></textarea>
             <div>
-          <button
-            type="submit"
-            className="w-50 bg-red-500 text-white py-3 rounded-md hover:bg-red-600 transition-colors cursor-pointer flex items-center justify-center gap-2"
-          >
-            <Send className="w-5 h-5" /> Get In Touch
-          </button>
-        </div>
+              <button
+                type="submit"
+                className="w-50 bg-red-500 text-white py-3 rounded-md hover:bg-red-600 transition-colors cursor-pointer flex items-center justify-center gap-2"
+              >
+                <Send className="w-5 h-5" /> Get In Touch
+              </button>
+            </div>
           </form>
         </div>
       </div>
