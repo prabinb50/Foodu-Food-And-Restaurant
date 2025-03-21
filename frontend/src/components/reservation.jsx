@@ -14,12 +14,10 @@ export default function Reservation() {
     const [person, setPerson] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
-
     // function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
         alert('Thanks For Your Reservation');
-
         // reset the form fields
         setName('');
         setNumber('');
