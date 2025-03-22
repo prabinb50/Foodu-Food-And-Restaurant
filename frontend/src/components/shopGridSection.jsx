@@ -14,18 +14,18 @@ export default function ShopGridSection() {
     ]
 
     return (
-        <div className='grid grid-cols-4 gap-3 pt-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-10 px-4'>
             {
                 items.map((eachItem, index) => (
-                    <div key={index} className='border-1 border-gray-300 p-10 rounded-md space-y-4 flex flex-col items-center bg-[#EBE9E6]'>
+                    <div key={index} className='border border-gray-300 p-5 rounded-md space-y-4 flex flex-col items-center bg-[#EBE9E6]'>
                         {/* item image */}
-                        <img src={eachItem.image} alt="" className='w-30 object-cover' />
+                        <img src={eachItem.image} alt={eachItem.name} className='w-30 object-cover' />
                         {/* item category */}
                         <p className='opacity-60 text-sm font-semibold cursor-pointer'>{eachItem.category}</p>
                         {/* item name */}
                         <p className='text-lg font-semibold cursor-pointer'>{eachItem.name}</p>
 
-                        {/* Item price and Add to Cart button */}
+                        {/* item price and Add to Cart button */}
                         <div className='flex items-center justify-between gap-6'>
                             <p className='font-semibold text-red-500'>{eachItem.price}</p>
                             <button className='border-none bg-red-500 rounded-md px-2 py-1 cursor-pointer font-semibold hover:bg-red-600 text-white'>Add to Cart</button>
@@ -34,6 +34,27 @@ export default function ShopGridSection() {
                 ))
             }
         </div>
+
+        // <div className='grid grid-cols-4 gap-3 pt-10'>
+        //     {
+        //         items.map((eachItem, index) => (
+        //             <div key={index} className='border-1 border-gray-300 p-10 rounded-md space-y-4 flex flex-col items-center bg-[#EBE9E6]'>
+        //                 {/* item image */}
+        //                 <img src={eachItem.image} alt="" className='w-30 object-cover' />
+        //                 {/* item category */}
+        //                 <p className='opacity-60 text-sm font-semibold cursor-pointer'>{eachItem.category}</p>
+        //                 {/* item name */}
+        //                 <p className='text-lg font-semibold cursor-pointer'>{eachItem.name}</p>
+
+        //                 {/* Item price and Add to Cart button */}
+        //                 <div className='flex items-center justify-between gap-6'>
+        //                     <p className='font-semibold text-red-500'>{eachItem.price}</p>
+        //                     <button className='border-none bg-red-500 rounded-md px-2 py-1 cursor-pointer font-semibold hover:bg-red-600 text-white'>Add to Cart</button>
+        //                 </div>
+        //             </div>
+        //         ))
+        //     }
+        // </div>
 
     )
 }
