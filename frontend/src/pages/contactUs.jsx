@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ChevronRight,
   HomeIcon,
@@ -12,6 +12,20 @@ import {
 import { NavLink } from "react-router";
 
 export default function ContactUs() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Thank You for reaching out.");
+    setName('');
+    setEmail('');
+    setPhone('');
+    setMessage('');
+}
+
   return (
     <div className="bg-white">
       {/* Header Section */}
@@ -95,8 +109,8 @@ export default function ContactUs() {
 
       <div>
         {/* Contact Form */}
-        <div className="bg-neutral-200 p-20 m-20">
-          <div className="flex flex-col justify-between items-center font-serif p-5">
+        <div className="bg-neutral-100 p-20 m-20">
+          <div className="flex flex-col justify-between items-center p-5">
             <div className="flex justify-between items-center gap-2 mb-4">
               <MoveLeft color="red" />
               <p className="text-red-400 font-semibold">KEEP IN TOUCH</p>
@@ -105,32 +119,40 @@ export default function ContactUs() {
             <p className="text-4xl font-semibold">Send Us a Message</p>
           </div>
 
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input
               required
+              value={name}
               type="text"
               placeholder="Your Name"
-              className="w-full p-3 bg-neutral-100 border border-neutral-100 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              onChange={(e) => setName(e.target.value)}
+              className="w-full p-3 bg-neutral-50 border border-neutral-50 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
             />
             <div className="grid grid-cols-2 gap-4">
               <input
                 required
+                value={email}
                 type="email"
                 placeholder="Your Email"
-                className="w-full p-3 bg-neutral-100 border border-neutral-100 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full p-3 bg-neutral-50 border border-neutral-50 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
               <input
                 required
+                value={phone}
                 type="phonenumber"
                 placeholder="Your Phone"
-                className="w-full p-3 bg-neutral-100 border border-neutral-100 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full p-3 bg-neutral-50 border border-neutral-50 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
             <textarea
               required
+              value={message}
               placeholder="Your Message"
               rows={5}
-              className="w-full p-3 bg-neutral-100 border border-neutral-100 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              onChange={(e)=> setMessage(e.target.value)}
+              className="w-full p-3 bg-neutral-50 border border-neutral-50 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
             ></textarea>
             <div>
               <button

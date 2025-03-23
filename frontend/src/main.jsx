@@ -11,6 +11,7 @@ import BlogFoodPage from './pages/blogFoodPage.jsx'
 import BlogPizzaPage from './pages/blogPizzaPage.jsx'
 import ContactUs from './pages/contactUs.jsx'
 import ShopPage from './pages/shopPage.jsx'
+import PageAboutUs from './pages/pageAboutUs.jsx'
 
 
 export function Root() {
@@ -26,7 +27,7 @@ export function Root() {
         <Route path="/blog-pizza" element={<BlogPizzaPage></BlogPizzaPage>} />
         <Route path="/contact-us" element={<ContactUs></ContactUs>} />
         <Route path="/shop" element={<ShopPage></ShopPage>} />
-        <Route path="/pages" element={<App />} />
+        <Route path="/pages" element={<PageAboutUs/>} />
         <Route path="/menu" element={<App />} />
 
       </Routes>
