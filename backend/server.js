@@ -4,10 +4,12 @@ import "dotenv/config";
 import mealMasterRoute from "./routes/mealMasterRoute.js";
 import userRoute from "./routes/userRoute.js";
 import newsAndBlogRoute from "./routes/newsAndBlogRoute.js";
+import cors from "cors";
 
 export const app = express(); // configure the server
 
 app.use(express.json()); // middleware (for json)
+app.use(cors()); // middleware (for cors)
 
 // connect to database
 try {
