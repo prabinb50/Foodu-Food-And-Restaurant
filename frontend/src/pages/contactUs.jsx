@@ -20,18 +20,18 @@ export default function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Thank You for reaching out.");
-    setName('');
-    setEmail('');
-    setPhone('');
-    setMessage('');
-}
+    setName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+  };
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-100">
       {/* Header Section */}
-      <div className="bg-neutral-900 text-white py-16 px-4">
-        <h1 className="text-5xl font-serif text-center mb-6">Contact Us</h1>
-        <div className="flex items-center justify-center gap-2 text-neutral-300">
+      {/* <div className="bg-neutral-800 p-25 text-white">
+        <h1 className="text-6xl text-center mb-6 font-semibold">Contact Us</h1>
+        <div className="flex items-center justify-center gap-2 font-semibold">
           <HomeIcon className="w-5 h-5" />
           <NavLink to="/" className="hover:text-white transition-colors">
             Home
@@ -41,10 +41,28 @@ export default function ContactUs() {
             Contact
           </NavLink>
         </div>
+      </div> */}
+
+      <div className="bg-neutral-800 p-25 text-center space-y-4">
+        <h1 className="text-4xl md:text-6xl text-white font-semibold">
+          Contact Us
+        </h1>
+
+        <div className="flex items-center justify-center text-white font-semibold space-x-2">
+          <HomeIcon className="w-5 h-5" />
+          <NavLink to="/" className="cursor-pointer">
+            Home
+          </NavLink>
+
+          <div className="flex items-center">
+            <ChevronRight color="white" />
+            <span>Contact</span>
+          </div>
+        </div>
       </div>
 
       {/* Google Maps Section */}
-      <div className=" relative w-full  mb-12">
+      <div className=" relative w-full">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2988.8219106830534!2d85.31008310761253!3d27.701567613575126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1854cfda3e59%3A0x4191b31405936f34!2sKathmandu%20Mall%2C%20Sundhara%20Marg%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1742520115924!5m2!1sen!2snp"
           height="800"
@@ -56,7 +74,7 @@ export default function ContactUs() {
       </div>
 
       {/* Contact Information Section */}
-      <div className="absolute top-8/12 ml-24 w-2/5 bg-white grid">
+      <div className="absolute top-10/12 ml-24 w-2/5 bg-white grid">
         <div className="p-20 m-auto">
           <h2 className="text-3xl font-serif font-bold mb-6">
             Find Food Lounge
@@ -107,16 +125,16 @@ export default function ContactUs() {
         </div>
       </div>
 
-      <div>
+      <div className="w-10/12 mx-auto pt-20 pb-20">
         {/* Contact Form */}
-        <div className="bg-neutral-100 p-20 m-20">
+        <div className="bg-[#EBE9E6] p-10 border-none rounded-md">
           <div className="flex flex-col justify-between items-center p-5">
             <div className="flex justify-between items-center gap-2 mb-4">
               <MoveLeft color="red" />
-              <p className="text-red-400 font-semibold">KEEP IN TOUCH</p>
+              <p className="text-red-500 font-semibold text-xl">KEEP IN TOUCH</p>
               <MoveRight color="red" />
             </div>
-            <p className="text-4xl font-semibold">Send Us a Message</p>
+            <p className="text-5xl font-semibold">Send Us a Message</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -151,13 +169,13 @@ export default function ContactUs() {
               value={message}
               placeholder="Your Message"
               rows={5}
-              onChange={(e)=> setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
               className="w-full p-3 bg-neutral-50 border border-neutral-50 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
             ></textarea>
             <div>
               <button
                 type="submit"
-                className="w-50 bg-red-500 text-white py-3 rounded-md hover:bg-red-600 transition-colors cursor-pointer flex items-center justify-center gap-2"
+                className="w-50 bg-red-500 text-white py-3 rounded-md hover:bg-black transition-colors cursor-pointer flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" /> Get In Touch
               </button>

@@ -27,7 +27,7 @@ export default function ShopPage() {
             </div>
 
             {/* second child: items section*/}
-            <div className='w-11/12 md:w-10/12 mx-auto pt-10 pb-20'>
+            <div className='w-11/12 md:w-10/12 mx-auto pt-20 pb-20'>
                 <div className='flex space-x-4 justify-center md:justify-start'>
                     <div onClick={() => setView('grid')} className={`border border-gray-300 rounded-md h-12 w-12 p-2 cursor-pointer ${view === 'grid' ? 'bg-red-500 text-white' : ''}`}>
                         <Grid2x2 size={30} />

@@ -8,7 +8,7 @@ export default function NewsAndBlog() {
             <div className="font-serif flex items-center justify-between flex-col text-center md:text-left">
                 <div className="flex justify-between items-center space-x-2">
                     <MoveLeft className='text-red-500'></MoveLeft>
-                    <p className='text-xl text-red-500'>NEWS & BLOG</p>
+                    <p className=' text-red-500'>NEWS & BLOG</p>
                     <MoveRight className='text-red-500'></MoveRight>
                 </div>
 
