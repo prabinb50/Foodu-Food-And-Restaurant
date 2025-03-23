@@ -1,6 +1,7 @@
 import { Dot, MoveLeft, MoveRight } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { format } from 'date-fns'
 
 export default function NewsAndBlog() {
 
@@ -47,7 +48,7 @@ export default function NewsAndBlog() {
                             <p className='absolute top-8 left-5 text-black border-none bg-white rounded-md text-xs px-2 py-1 font-semibold hover:text-red-500'>{eachItem.category}</p>
 
                             <p className='font-semibold text-lg hover:text-red-500 hover:underline'>{eachItem.description}</p>
-                            <p className='opacity-50 font-semibold text-sm flex'>{eachItem.date} <span className='flex hover:text-red-500 hover:opacity-90'><Dot />{eachItem.author}</span></p>
+                            <p className='opacity-50 font-semibold text-sm flex'>{format(new Date(eachItem.date), 'dd MMMM, yyyy')}<span className='flex hover:text-red-500 hover:opacity-90'><Dot />{eachItem.author}</span></p>
                         </div>
                     ))
                 }
