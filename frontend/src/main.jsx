@@ -22,13 +22,15 @@ export function Root() {
 
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/blog" element={<BlogPage></BlogPage>} />
+        {/* <Route path="/blog" element={<BlogPage></BlogPage>} /> */}
         <Route path="/blog-food" element={<BlogFoodPage></BlogFoodPage>} />
         <Route path="/blog-pizza" element={<BlogPizzaPage></BlogPizzaPage>} />
         <Route path="/contact-us" element={<ContactUs></ContactUs>} />
         <Route path="/shop" element={<ShopPage></ShopPage>} />
-        <Route path="/pages" element={<PageAboutUs/>} />
+        <Route path="/pages" element={<PageAboutUs />} />
         <Route path="/menu" element={<App />} />
+
+        <Route path="/blog/:id" element={<BlogPage />} />
 
       </Routes>
 

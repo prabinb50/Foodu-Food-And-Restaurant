@@ -1,8 +1,31 @@
 import { Facebook, Folder, Instagram, Linkedin, Search, Twitter } from 'lucide-react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router'
+import { format } from 'date-fns'
+import axios from 'axios';
 
 export default function BlogSectionBurgerRight() {
+
+    // state to store recent posts 
+    const [recentPosts, setRecentPosts] = useState(null);
+
+    // fetch the recent posts from the backend
+    const fetchRecentPosts = async () => {
+        try {
+            const response = await axios.get("http://localhost:4000/newsAndBlog");
+            // console.log("response", response.data.data);
+            setRecentPosts(response.data.data);
+
+        } catch (error) {
+            console.log("Something went wrong while fetching the news and blog data", error);
+        }
+    }
+
+    // call the fetchRecentPosts function
+    useEffect(() => {
+        fetchRecentPosts();
+    }, []);
+
     return (
         <div className=''>
             <div className='border-none bg-[#EBE9E6] p-10'>
@@ -17,17 +40,31 @@ export default function BlogSectionBurgerRight() {
                 <hr className='border-red-500 border-2 w-10' />
 
                 <div className='flex flex-col space-y-4'>
-                    <div className='flex items-start space-x-4'>
+                    {
+                        recentPosts?.map((post, index) => (
+                            <div key={index} className='flex items-start space-x-4'>
+                                <NavLink to={`/blog/${post._id}`}>
+                                    <img src={post.image} alt='Post 1' className='w-45 h-16 object-cover rounded-md cursor-pointer' />
+                                </NavLink>
+
+                                <div className='space-y-2'>
+                                    <p className='text-sm opacity-60'>{format(new Date(post.date), 'dd MMMM, yyyy')}</p>
+                                    <NavLink to={`/blog/${post._id}`} className='font-semibold cursor-pointer hover:text-red-500 hover:underline'>{post.description}</NavLink>
+                                </div>
+                            </div>
+                        ))
+                    }
+                    {/* <div className='flex items-start space-x-4'>
                         <NavLink to="/blog">
-                            <img src='/burger.jpg' alt='Post 1' className='w-45 h-16 object-cover rounded-md cursor-pointer' />
+                            <img src={eachItem.image} alt='Post 1' className='w-45 h-16 object-cover rounded-md cursor-pointer' />
                         </NavLink>
                         <div className='space-y-2'>
                             <p className='text-sm opacity-60'>12 August, 2024</p>
                             <NavLink to="/blog" className='font-semibold cursor-pointer hover:text-red-500 hover:underline'>Announcing if attachment resolution sentiments ...</NavLink>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className='flex items-start space-x-4'>
+                    {/* <div className='flex items-start space-x-4'>
                         <NavLink to="/blog-food">
                             <img src='/food.jpg' alt='Post 1' className='w-45 h-16 object-cover rounded-md cursor-pointer' />
                         </NavLink>
@@ -45,7 +82,7 @@ export default function BlogSectionBurgerRight() {
                             <p className='text-sm opacity-60'>14 August, 2024</p>
                             <NavLink to="/blog-pizza" className='font-semibold cursor-pointer hover:text-red-500 hover:underline'>Minuter him own clothes but observe country mai ..</NavLink>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
