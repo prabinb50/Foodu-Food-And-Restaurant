@@ -44,25 +44,6 @@ export default function ShopPage() {
                 {/* Conditionally render the sections based on the selected view */}
                 {view === 'grid' ? <ShopGridSection /> : <ShopTableSection />}
             </div>
-
-
-            {/* <div className='w-10/12 mx-auto pt-20 pb-20'> 
-            <div className='flex space-x-4'>
-                <div onClick={() => setView('grid')} className={`border-1 border-gray-300 rounded-md h-12 w-12 p-2 cursor-pointer ${view === 'grid' ? 'bg-red-500 text-white' : ''}`}>
-                    <Grid2x2 size={30} />
-                </div>
-
-                <div
-                    onClick={() => setView('table')}
-                    className={`border-1 border-gray-300 rounded-md h-12 w-12 p-2 cursor-pointer ${view === 'table' ? 'bg-red-500 text-white' : ''}`}
-                >
-                    <TableProperties size={30} />
-                </div>
-            </div> */}
-
-            {/* Conditionally render the sections based on the selected view */}
-            {/* {view === 'grid' ? <ShopGridSection /> : <ShopTableSection />}
-            </div> */}
         </div>
     )
 }
