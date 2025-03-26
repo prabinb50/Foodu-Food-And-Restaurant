@@ -37,10 +37,9 @@ export default function SpecialLunch() {
         delay: 2500,
         disableOnInteraction: false,
       }}
-      pagination={{
-        clickable: true,
-      }}
-      navigation={true}
+      loop={true}
+      pagination={ false}
+      navigation={false}
       modules={[Pagination, Navigation, Autoplay]}
       className="mySwiper"
     >
