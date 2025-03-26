@@ -1,10 +1,36 @@
-import React from 'react'
-import { ChevronRight, Home } from 'lucide-react'
-import { NavLink } from 'react-router'
+import React, { useEffect, useState } from 'react'
+import { ChevronRight } from 'lucide-react'
+import { NavLink, useLocation } from 'react-router'
 import BlogSectionBurgerRight from '../components/blogSectionBurgerRight'
 import BlogSectionBurgerLeft from '../components/blogSectionBurgerLeft'
+import axios from 'axios'
 
 export default function BlogPage() {
+    // get the news and blog id from the url
+    const location = useLocation();
+    // console.log("location", location);
+    // console.log("location", location.pathname);
+    const newsAndBlog_id = location.pathname.split("/")[2];
+
+    // state to store the single news and blog data
+    const [singleNewsAndBlog, setSingleNewsAndBlog] = useState([]);
+
+    // fetch the single news and blog data from the backend
+    const fetchSingleNewsAndBlog = async () => {
+        try {
+            const response = await axios.get(`http://localhost:4000/newsAndBlog/${newsAndBlog_id}`);
+            // console.log("response", response.data.data);
+            setSingleNewsAndBlog([response.data.data]);
+        } catch (error) {
+            console.log("Something went wrong while fetching the single news and blog data", error);
+        }
+    }
+
+    // call the fetchSingleNewsAndBlog function
+    useEffect(() => {
+        fetchSingleNewsAndBlog();
+    }, [newsAndBlog_id]);
+
     return (
         <div className='bg-gray-100'>
             <div className='bg-neutral-800 p-25 text-center space-y-4'>
@@ -23,15 +49,19 @@ export default function BlogPage() {
 
 
             <div className='mt-25'>
-                <div className=' flex flex-col md:flex-row w-10/12 mx-auto justify-between gap-10 '>
-                    <div className='md:w-8/12 w-full'>
-                        <BlogSectionBurgerLeft></BlogSectionBurgerLeft>
-                    </div>
+                {
+                    singleNewsAndBlog?.map((eachItem, index) => (
+                        <div key={index} className='flex flex-col md:flex-row w-10/12 mx-auto justify-between gap-10 '>
+                            <div className='md:w-8/12 w-full'>
+                                <BlogSectionBurgerLeft eachItem={eachItem}></BlogSectionBurgerLeft>
+                            </div>
 
-                    <div className='md:w-4/12 w-full'>
-                        <BlogSectionBurgerRight></BlogSectionBurgerRight>
-                    </div>
-                </div>
+                            <div className='md:w-4/12 w-full'>
+                                <BlogSectionBurgerRight></BlogSectionBurgerRight>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
