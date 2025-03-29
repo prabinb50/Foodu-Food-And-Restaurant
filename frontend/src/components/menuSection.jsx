@@ -3,6 +3,7 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import breakfastImage from "../../public/breakfastImage.png";
 import lunchImage from "../../public/lunchImage.png";
 import dinnerImage from "../../public/dinnerImage.png";
+import { Link } from "react-router";
 
 export default function MenuSection() {
   const breakfastMenu = [
@@ -24,70 +25,100 @@ export default function MenuSection() {
   ];
 
   return (
-    <div className="bg-neutral-900 font-serif text-white p-20">
-
-      <div className="flex flex-col justify-between items-center">
-        <div className="flex justify-between items-center">
+    <div className="bg-neutral-900 font-serif text-white p-6 sm:p-10 lg:p-20">
+      {/* Header Section */}
+      <div className="flex flex-col justify-between items-center text-center">
+        <div className="flex justify-between items-center space-x-2">
           <MoveLeft color="red" />
-          <p className="text-xl">FOOD MENU</p>
+          <p className="text-lg sm:text-xl">FOOD MENU</p>
           <MoveRight color="red" />
         </div>
-        <p className="text-5xl font-semibold">Discover Our Menu</p>
+        <p className="text-3xl sm:text-4xl lg:text-5xl font-semibold mt-4">
+          Discover Our Menu
+        </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-10 p-16">
-        <div className="bg-neutral-800 p-10 border rounded-2xl border-none">
+      {/* Menu Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 p-6 sm:p-10 lg:p-16">
+        {/* Breakfast Section */}
+        <div className="bg-neutral-800 p-6 sm:p-10 border rounded-2xl border-none">
           <img
             src={breakfastImage}
-            className="h-54 border-8 border-neutral-900 rounded-full"
+            className="h-40 sm:h-48 lg:h-54 border-8 border-neutral-900 rounded-full mx-auto"
             alt="breakfast"
           />
-          <p className="text-xl font-semibold p-4">Breakfast</p>
+          <p className="text-lg sm:text-xl font-semibold p-4 text-center">
+            Breakfast
+          </p>
           {breakfastMenu.map((item, index) => (
-            <div key={index} className="flex justify-between items-center p-2">
+            <div
+              key={index}
+              className="flex justify-between items-center p-2 text-sm sm:text-base"
+            >
               <p>{item.name}</p>
               <p>{item.price}</p>
             </div>
           ))}
-          <button className="bg-red-500 text-white px-27 py-2 rounded-md mt-4">
+          <Link
+            to="/shop"
+            className="bg-red-500 text-white px-6 sm:px-8 py-2 rounded-md mt-4 block text-center"
+          >
             Make Order
-          </button>
+          </Link>
         </div>
 
-        <div className="bg-neutral-800 p-10 border rounded-2xl border-none">
+        {/* Lunch Section */}
+        <div className="bg-neutral-800 p-6 sm:p-10 border rounded-2xl border-none">
           <img
             src={lunchImage}
-            className="h-54 border-8 border-neutral-900 rounded-full"
+            className="h-40 sm:h-48 lg:h-54 border-8 border-neutral-900 rounded-full mx-auto"
             alt="lunch"
           />
-          <p className="text-xl font-semibold p-4">Lunch</p>
+          <p className="text-lg sm:text-xl font-semibold p-4 text-center">
+            Lunch
+          </p>
           {lunchMenu.map((item, index) => (
-            <div key={index} className="flex justify-between items-center p-2">
+            <div
+              key={index}
+              className="flex justify-between items-center p-2 text-sm sm:text-base"
+            >
               <p>{item.name}</p>
               <p>{item.price}</p>
             </div>
           ))}
-          <button className="bg-red-500 text-white px-27 py-2 rounded-md mt-4">
+          <Link
+            to="/shop"
+            className="bg-red-500 text-white px-6 sm:px-8 py-2 rounded-md mt-4 block text-center"
+          >
             Make Order
-          </button>
+          </Link>
         </div>
 
-        <div className="bg-neutral-800 p-10 border rounded-2xl border-none">
+        {/* Dinner Section */}
+        <div className="bg-neutral-800 p-6 sm:p-10 border rounded-2xl border-none">
           <img
             src={dinnerImage}
-            className="h-54 border-8 border-neutral-900 rounded-full"
+            className="h-40 sm:h-48 lg:h-54 border-8 border-neutral-900 rounded-full mx-auto"
             alt="dinner"
           />
-          <p className="text-xl font-semibold p-4">Dinner</p>
+          <p className="text-lg sm:text-xl font-semibold p-4 text-center">
+            Dinner
+          </p>
           {dinnerMenu.map((item, index) => (
-            <div key={index} className="flex justify-between items-center p-2">
+            <div
+              key={index}
+              className="flex justify-between items-center p-2 text-sm sm:text-base"
+            >
               <p>{item.name}</p>
               <p>{item.price}</p>
             </div>
           ))}
-          <button className="bg-red-500 text-white px-27 py-2 rounded-md mt-4 cursor-pointer">
+          <Link
+            to="/shop"
+            className="bg-red-500 text-white px-6 sm:px-8 py-2 rounded-md mt-4 block text-center"
+          >
             Make Order
-          </button>
+          </Link>
         </div>
       </div>
     </div>

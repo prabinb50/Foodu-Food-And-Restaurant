@@ -31,7 +31,6 @@ export function Root() {
         <Route path="/menu" element={<App />} />
 
         <Route path="/blog/:id" element={<BlogPage />} />
-
       </Routes>
 
       <div className='bg-gray-100 pb-10'>

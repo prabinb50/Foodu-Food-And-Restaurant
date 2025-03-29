@@ -1,10 +1,30 @@
 import { ChevronRight, Grid2x2, HomeIcon, TableProperties } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router'
 import ShopGridSection from '../components/shopGridSection'
 import ShopTableSection from '../components/shopTableSection'
+import axios from 'axios'
 
 export default function ShopPage() {
+
+    // state to store the shop items data from the backend
+    const [shopItems, setShopItems] = useState([]);
+
+    // fetch the shop items from the backend
+    const fetchShopItems = async () => {
+        try {
+            const response = await axios.get("http://localhost:4000/shopItems");
+            // console.log("response", response.data.data);
+            setShopItems(response.data.data);
+        } catch (error) {
+            console.log("Something went wrong while fetching the shop items data", error);
+        }
+    }
+
+    // call the fetchShopItems function
+    useEffect(() => {
+        fetchShopItems();
+    }, []);
 
     // useState: state to manage the current view 
     const [view, setView] = useState('grid');
@@ -42,7 +62,26 @@ export default function ShopPage() {
                 </div>
 
                 {/* Conditionally render the sections based on the selected view */}
-                {view === 'grid' ? <ShopGridSection /> : <ShopTableSection />}
+                {/* {
+                    shopItems?.map((eachItem, index) => (
+                        view === 'grid'
+                            ? <ShopGridSection key={index} item={eachItem} />
+                            : <ShopTableSection key={index} item={eachItem} />
+                    ))
+                } */}
+                {/* {
+                    view === 'grid'
+                        ? <ShopGridSection items={shopItems} />
+                        : shopItems?.map((eachItem, index) => (
+                            <ShopTableSection key={index} item={eachItem} />
+                        ))
+                } */}
+
+                {
+                    view === 'grid'
+                        ? <ShopGridSection items={shopItems} />
+                        : <ShopTableSection items={shopItems} />
+                }
             </div>
         </div>
     )

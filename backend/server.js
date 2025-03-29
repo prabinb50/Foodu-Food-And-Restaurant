@@ -4,6 +4,7 @@ import "dotenv/config";
 import mealMasterRoute from "./routes/mealMasterRoute.js";
 import userRoute from "./routes/userRoute.js";
 import newsAndBlogRoute from "./routes/newsAndBlogRoute.js";
+import shopItemRoute from "./routes/shopItemroute.js";
 import cors from "cors";
 
 export const app = express(); // configure the server
@@ -22,6 +23,7 @@ try {
 app.use("/mealMaster", mealMasterRoute);
 app.use("/users", userRoute);
 app.use("/newsAndBlog", newsAndBlogRoute);
+app.use("/shopItems", shopItemRoute)
 
 // app.listen(4000, () => {
 //     console.log(`Example app listening on port ${process.env.APP_PORT}`);
