@@ -7,8 +7,8 @@ import BlogPage from './pages/blogPage.jsx'
 import FirstNavbar from './components/firstNavbar.jsx'
 import SecondNavBar from './components/secondNavBar.jsx'
 import Footer from './components/footer.jsx'
-import BlogFoodPage from './pages/blogFoodPage.jsx'
-import BlogPizzaPage from './pages/blogPizzaPage.jsx'
+// import BlogFoodPage from './pages/blogFoodPage.jsx'
+// import BlogPizzaPage from './pages/blogPizzaPage.jsx'
 import ContactUs from './pages/contactUs.jsx'
 import ShopPage from './pages/shopPage.jsx'
 import PageAboutUs from './pages/pageAboutUs.jsx'
@@ -23,8 +23,8 @@ export function Root() {
       <Routes>
         <Route path="/" element={<App />} />
         {/* <Route path="/blog" element={<BlogPage></BlogPage>} /> */}
-        <Route path="/blog-food" element={<BlogFoodPage></BlogFoodPage>} />
-        <Route path="/blog-pizza" element={<BlogPizzaPage></BlogPizzaPage>} />
+        {/* <Route path="/blog-food" element={<BlogFoodPage></BlogFoodPage>} />
+        <Route path="/blog-pizza" element={<BlogPizzaPage></BlogPizzaPage>} /> */}
         <Route path="/contact-us" element={<ContactUs></ContactUs>} />
         <Route path="/shop" element={<ShopPage></ShopPage>} />
         <Route path="/pages" element={<PageAboutUs />} />

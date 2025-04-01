@@ -69,13 +69,6 @@ export default function ShopPage() {
                             : <ShopTableSection key={index} item={eachItem} />
                     ))
                 } */}
-                {/* {
-                    view === 'grid'
-                        ? <ShopGridSection items={shopItems} />
-                        : shopItems?.map((eachItem, index) => (
-                            <ShopTableSection key={index} item={eachItem} />
-                        ))
-                } */}
 
                 {
                     view === 'grid'
