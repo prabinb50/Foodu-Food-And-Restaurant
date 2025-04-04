@@ -12,6 +12,7 @@ import Footer from './components/footer.jsx'
 import ContactUs from './pages/contactUs.jsx'
 import ShopPage from './pages/shopPage.jsx'
 import PageAboutUs from './pages/pageAboutUs.jsx'
+import ShopSingleThumb from './pages/shopSingleThumb.jsx'
 
 
 export function Root() {
@@ -31,6 +32,8 @@ export function Root() {
         <Route path="/menu" element={<App />} />
 
         <Route path="/blog/:id" element={<BlogPage />} />
+        <Route path="/shop-single-thumb/:id" element={<ShopSingleThumb></ShopSingleThumb>} />
+
       </Routes>
 
       <div className='bg-gray-100 pb-10'>
