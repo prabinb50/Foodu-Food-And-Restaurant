@@ -20,7 +20,7 @@ export default function ShopGridSection({ items = [] }) {
             {
                 items && items.length > 0 ? ( // Check if items is valid and has elements
                     items.map((eachItem, index) => (
-                        <NavLink to={`/shopItems/${eachItem._id}`} key={index}>
+                        <NavLink to={`/shop-single-thumb/${eachItem._id}`} key={index}>
                             <div className='border border-gray-300 p-5 rounded-md space-y-4 flex flex-col items-center bg-[#EBE9E6] hover:shadow-lg transition-all duration-300'>
                                 {/* item image */}
                                 <img src={eachItem.image} alt={eachItem.name} className='w-30 object-cover hover:scale-105 transition-transform' />

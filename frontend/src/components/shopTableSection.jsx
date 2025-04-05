@@ -20,7 +20,7 @@ export default function ShopTableSection({ items = [] }) {
             {
                 items && items.length > 0 ? ( // Check if items is valid and has elements
                     items.map((eachItem, index) => (
-                        <NavLink to={`/shopItems/${eachItem._id}`} key={index}>
+                        <NavLink to={`/shop-single-thumb/${eachItem._id}`} key={index}>
                             <div className='flex flex-col lg:flex-row items-center gap-4 lg:gap-8 bg-[#EBE9E6] border-1 border-gray-300  rounded-md p-5 lg:p-10 hover:shadow-lg transition-all duration-300'>
                                 {/* item image */}
                                 <img src={eachItem.image} alt="" className='w-35 object-cover cursor-pointer hover:scale-105 transition-transform' />

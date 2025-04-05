@@ -1,19 +1,50 @@
 import { ChevronRight, CircleCheckBig, Heart, HomeIcon, RefreshCw, ShoppingCart } from 'lucide-react'
-import React, { useState } from 'react'
-import { NavLink } from 'react-router'
+import React, { useEffect, useState } from 'react'
+import { NavLink, useLocation } from 'react-router'
 import Description from '../components/description';
 import AdditionalInformation from '../components/additionalInformation';
 import Review from '../components/review';
 import RelatedProducts from '../components/relatedProducts';
+import axios from 'axios';
 
 export default function ShopSingleThumb() {
+    // get the shop single thumb id from the url
+    const location = useLocation();
+    // console.log("location", location);
+    // console.log("location", location.pathname.split("/"));
+    const shopSingleThumb_id = location.pathname.split("/")[2];
+
+
+    // state to store the single shop single thumb data
+    const [singleShopSingleThumb, setSingleShopSingleThumb] = useState();
+
+    // fetch the single shop single thumb data from the backend
+    const fetchSingleShopSingleThumb = async () => {
+        try {
+            const response = await axios.get(`http://localhost:4000/shopItems/${shopSingleThumb_id}`);
+            // console.log("response", response);
+            // console.log("response", response.data.data);
+            setSingleShopSingleThumb(response.data.data);
+        } catch (error) {
+            console.log("Something went wrong while fetching the single shop single thumb data", error);
+            error.response && console.log("error", error.response.data.message);
+            error.response && console.log("error", error.response.status);
+        }
+    }
+
+    // call the fetchSingleShopSingleThumb function
+    useEffect(() => {
+        fetchSingleShopSingleThumb();
+    }, [shopSingleThumb_id]);
+
+
     const [activeTab, setActiveTab] = useState('description');
 
     return (
         <div className='bg-gray-100'>
             {/* first child: header section */}
             <div className='bg-neutral-800 p-25 text-center space-y-4'>
-                <h1 className='text-4xl md:text-6xl text-white font-semibold'>Special Food</h1>
+                <h1 className='text-4xl md:text-6xl text-white font-semibold'>Grilled Flank Steak</h1>
 
                 <div className='flex items-center justify-center text-white font-semibold space-x-2'>
                     <HomeIcon className="w-5 h-5" />
@@ -21,7 +52,7 @@ export default function ShopSingleThumb() {
 
                     <div className='flex items-center'>
                         <ChevronRight color='white' />
-                        <span>shop</span>
+                        <span>shop-single-thumb</span>
                     </div>
                 </div>
             </div>
@@ -30,14 +61,14 @@ export default function ShopSingleThumb() {
             <div className='w-10/12 mx-auto flex items-center justify-between gap-10 space-x-4 mx-aut0 pt-20'>
                 {/* Image with discount badge */}
                 <div className='relative '>
-                    <img src="/cheese_pizza.png" alt="" className='object-cover hover:scale-105 transition-transform border-none bg-[#EBE9E6] h-110 w-500 p-10' />
+                    <img src={singleShopSingleThumb?.image} alt="" className='object-cover hover:scale-105 transition-transform border-none bg-[#EBE9E6] h-110 w-500 p-10' />
                     <span className='absolute top-4 left-4 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-full'>-16%</span>
                 </div>
 
                 <div className='space-y-5'>
-                    <p className='opacity-60 text-sm font-bold cursor-pointer'>Cheese Pizza</p>
-                    <p className='text-3xl font-semibold cursor-pointer'>Margherita Pizza</p>
-                    <p className='font-semibold text-red-500 text-xl'>$12.00</p>
+                    <p className='opacity-60 text-sm font-bold cursor-pointer'>{singleShopSingleThumb?.category}</p>
+                    <p className='text-3xl font-semibold cursor-pointer'>{singleShopSingleThumb?.name}</p>
+                    <p className='font-semibold text-red-500 text-xl'>${singleShopSingleThumb?.price}.00</p>
 
                     {/* In Stock Section */}
                     <div className='flex items-center gap-2 border-none bg-gray-200 py-2 px-4 rounded-md w-30'>

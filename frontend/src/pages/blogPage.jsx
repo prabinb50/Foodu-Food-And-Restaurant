@@ -8,8 +8,8 @@ import axios from 'axios'
 export default function BlogPage() {
     // get the news and blog id from the url
     const location = useLocation();
-    // console.log("location", location);
-    // console.log("location", location.pathname);
+    console.log("location", location);
+    console.log("location", location.pathname);
     const newsAndBlog_id = location.pathname.split("/")[2];
 
     // state to store the single news and blog data
