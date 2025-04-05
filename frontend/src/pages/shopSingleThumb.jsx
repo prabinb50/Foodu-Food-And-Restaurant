@@ -1,26 +1,27 @@
-import { Check, ChevronRight, CircleCheckBig, Heart, Minus, Plus, RefreshCw, ShoppingCart } from 'lucide-react'
+import { ChevronRight, CircleCheckBig, Heart, HomeIcon, RefreshCw, ShoppingCart } from 'lucide-react'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router'
 import Description from '../components/description';
 import AdditionalInformation from '../components/additionalInformation';
 import Review from '../components/review';
+import RelatedProducts from '../components/relatedProducts';
 
 export default function ShopSingleThumb() {
     const [activeTab, setActiveTab] = useState('description');
 
     return (
-        <div className='bg-gray-100 '>
-            {/* first child */}
+        <div className='bg-gray-100'>
+            {/* first child: header section */}
             <div className='bg-neutral-800 p-25 text-center space-y-4'>
-                <h1 className='text-6xl text-white font-semibold'>Grilled Flank Steak</h1>
+                <h1 className='text-4xl md:text-6xl text-white font-semibold'>Special Food</h1>
 
                 <div className='flex items-center justify-center text-white font-semibold space-x-2'>
-                    {/* <Home color='white' className='cursor-pointer' /> */}
+                    <HomeIcon className="w-5 h-5" />
                     <NavLink to="/" className='cursor-pointer'>Home</NavLink >
 
                     <div className='flex items-center'>
                         <ChevronRight color='white' />
-                        <span>shop-single-thumb</span>
+                        <span>shop</span>
                     </div>
                 </div>
             </div>
@@ -95,21 +96,21 @@ export default function ShopSingleThumb() {
             {/* third child */}
             <div className='w-10/12 mx-auto pt-20 '>
                 {/* Tabs */}
-                <div className='flex justify-center space-x-10 border-b'>
+                <div className='flex justify-center space-x-10 border-b '>
                     <button
-                        className={`pb-2 ${activeTab === 'description' ? 'border-b-2 border-red-600 text-black font-bold opacity-65' : 'text-gray-600 '}`}
+                        className={`pb-2 ${activeTab === 'description' ? 'border-b-2 border-red-600 text-black font-bold opacity-65 cursor-pointer' : 'text-gray-600 cursor-pointer'}`}
                         onClick={() => setActiveTab('description')}
                     >
                         Description
                     </button>
                     <button
-                        className={`pb-2 ${activeTab === 'additional' ? 'border-b-2 border-red-500 text-black font-bold opacity-60' : 'text-gray-600'}`}
+                        className={`pb-2 ${activeTab === 'additional' ? 'border-b-2 border-red-500 text-black font-bold opacity-60 cursor-pointer' : 'text-gray-600 cursor-pointer'}`}
                         onClick={() => setActiveTab('additional')}
                     >
                         Additional Information
                     </button>
                     <button
-                        className={`pb-2 ${activeTab === 'review' ? 'border-b-2 border-red-500 text-black font-bold opacity-60' : 'text-gray-600'}`}
+                        className={`pb-2 ${activeTab === 'review' ? 'border-b-2 border-red-500 text-black font-bold opacity-60 cursor-pointer' : 'text-gray-600 cursor-pointer'}`}
                         onClick={() => setActiveTab('review')}
                     >
                         Review
@@ -117,12 +118,16 @@ export default function ShopSingleThumb() {
                 </div>
 
                 {/* Tab Content */}
-                <div className='pt-8'>
+                <div className='pt-8 '>
                     {activeTab === 'description' && <Description></Description>}
                     {activeTab === 'additional' && <AdditionalInformation />}
                     {activeTab === 'review' && <Review />}
                 </div>
             </div>
+
+            {/* fourth child */}
+            {/* Related Products Section */}
+            <RelatedProducts></RelatedProducts>
         </div>
     )
 }
