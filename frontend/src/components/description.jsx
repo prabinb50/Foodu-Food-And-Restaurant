@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Description() {
     return (
-        <div>
+        <div className=''>
             <p className='opacity-65'>
                 There is immense scope for organic production of vegetable crops in India since the agricultural sector has enormous organic resources like crop residues, livestock and other bio-products from agro industries. Organic farming is growing at a rapid pace among Indian farmers and entrepreneurs, particularly in rainfed and hilly areas where fertilizer consumption is less than 25 kg/ha/year [13].
             </p>

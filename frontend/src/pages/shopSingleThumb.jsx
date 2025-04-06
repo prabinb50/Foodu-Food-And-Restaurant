@@ -1,6 +1,6 @@
 import { ChevronRight, CircleCheckBig, Heart, HomeIcon, RefreshCw, ShoppingCart } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
-import { NavLink, useLocation } from 'react-router'
+import { Link, NavLink, useLocation } from 'react-router'
 import Description from '../components/description';
 import AdditionalInformation from '../components/additionalInformation';
 import Review from '../components/review';
@@ -38,6 +38,7 @@ export default function ShopSingleThumb() {
     }, [shopSingleThumb_id]);
 
 
+    // state to store the active tab for the description, additional information and review sections  
     const [activeTab, setActiveTab] = useState('description');
 
     return (
@@ -66,8 +67,9 @@ export default function ShopSingleThumb() {
                 </div>
 
                 <div className='space-y-5'>
-                    <p className='opacity-60 text-sm font-bold cursor-pointer'>{singleShopSingleThumb?.category}</p>
-                    <p className='text-3xl font-semibold cursor-pointer'>{singleShopSingleThumb?.name}</p>
+                    <Link to={`/shop-single-thumb/${singleShopSingleThumb?._id}`} className='opacity-60 text-sm font-bold cursor-pointer '>{singleShopSingleThumb?.category}
+                    </Link>
+                    <p className='text-3xl font-semibold cursor-pointer  pt-3'>{singleShopSingleThumb?.name}</p>
                     <p className='font-semibold text-red-500 text-xl'>${singleShopSingleThumb?.price}.00</p>
 
                     {/* In Stock Section */}
@@ -112,14 +114,19 @@ export default function ShopSingleThumb() {
                         </div> */}
 
                         {/* Add to Cart Button */}
-                        <div className='flex items-center justify-between gap-2 border-none bg-red-500 text-white px-4 py-3 cursor-pointer font-semibold active:scale-95 transition-all hover:bg-black hover:text-white'>
+                        <NavLink to={`/shop-single-thumb/${singleShopSingleThumb?._id}`} className='flex items-center justify-between gap-2 border-none bg-red-500 text-white px-4 py-3 cursor-pointer font-semibold active:scale-95 transition-all hover:bg-black hover:text-white'>
                             <ShoppingCart color='white' />
                             <button className="">Add To Cart</button>
-                        </div>
+                        </NavLink >
 
                         {/* Heart and Refresh Icons */}
-                        <Heart color='red' className='border-1 border-gray-400 rounded-full h-10 w-10 p-2 cursor-pointer' />
-                        <RefreshCw color='red' className='border-1 border-gray-400 rounded-full h-10 w-10 p-2 cursor-pointer' />
+                        <Link to={`/shop-single-thumb/${singleShopSingleThumb?._id}`}>
+                            <Heart color='red' className='border-1 border-gray-400 rounded-full h-10 w-10 p-2 cursor-pointer' />
+                        </Link>
+
+                        <Link to={`/shop-single-thumb/${singleShopSingleThumb?._id}`}>
+                            <RefreshCw color='red' className='border-1 border-gray-400 rounded-full h-10 w-10 p-2 cursor-pointer' />
+                        </Link>
                     </div>
                 </div>
             </div>
