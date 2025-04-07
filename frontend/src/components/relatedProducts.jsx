@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import "swiper/css/autoplay";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { NavLink } from 'react-router';
 import axios from 'axios';
 
@@ -47,14 +48,17 @@ export default function RelatedProducts() {
                 slidesPerView={4}
                 spaceBetween={20}
                 autoplay={{
-                    delay: 2500,
+                    delay: 1500,
                     disableOnInteraction: false,
                 }}
-                loop={true}
+                speed={500}
+                // loop={true}
+                loop={relatedProducts.length > 4} // Enable loop only if there are more than 4 slides
                 pagination={false}
                 navigation={false}
-                modules={[Pagination, Navigation, Autoplay]}
+                modules={[Autoplay, Pagination, Navigation]}
                 className="related-products-swiper"
+                onInit={(swiper) => console.log("Swiper initialized:", swiper)}
             >
                 {relatedProducts?.map((product, index) => (
                     <SwiperSlide key={index}>
