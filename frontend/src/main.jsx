@@ -13,6 +13,7 @@ import ContactUs from './pages/contactUs.jsx'
 import ShopPage from './pages/shopPage.jsx'
 import PageAboutUs from './pages/pageAboutUs.jsx'
 import ShopSingleThumb from './pages/shopSingleThumb.jsx'
+import MenuPage from './pages/menuPage.jsx'
 
 
 export function Root() {
@@ -29,7 +30,7 @@ export function Root() {
         <Route path="/contact-us" element={<ContactUs></ContactUs>} />
         <Route path="/shop" element={<ShopPage></ShopPage>} />
         <Route path="/pages" element={<PageAboutUs />} />
-        <Route path="/menu" element={<App />} />
+        <Route path="/menu" element={<MenuPage/>} />
 
         <Route path="/blog/:id" element={<BlogPage />} />
         <Route path="/shop-single-thumb/:id" element={<ShopSingleThumb></ShopSingleThumb>} />
