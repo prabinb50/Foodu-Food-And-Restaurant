@@ -14,8 +14,12 @@ import ShopPage from './pages/shopPage.jsx'
 import PageAboutUs from './pages/pageAboutUs.jsx'
 import ShopSingleThumb from './pages/shopSingleThumb.jsx'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import MenuPage from './pages/menuPage.jsx'
 
+=======
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+>>>>>>> 258654faa61774b826a0bcb6954cf78283c6d203
 =======
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 >>>>>>> 258654faa61774b826a0bcb6954cf78283c6d203
