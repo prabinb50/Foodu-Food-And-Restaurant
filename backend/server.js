@@ -10,7 +10,11 @@ import cors from "cors";
 export const app = express(); // configure the server
 
 app.use(express.json()); // middleware (for json)
-app.use(cors()); // middleware (for cors)
+
+// middleware (for cors)
+app.use(cors({
+    origin: 'http://localhost:5173',
+}));
 
 // connect to database
 try {

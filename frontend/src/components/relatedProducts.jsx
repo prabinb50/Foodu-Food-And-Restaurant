@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import "swiper/css/autoplay";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { NavLink } from 'react-router';
 import axios from 'axios';
 
@@ -41,30 +42,44 @@ export default function RelatedProducts() {
     // ]
 
     return (
-        <div className='w-10/12 mx-auto pt-20 pb-20'>
-            <h2 className='text-3xl font-semibold mb-8'>Related Products</h2>
+        <div className='w-11/12 md:w-10/12 mx-auto pt-10 sm:pt-15 md:pt-20 pb-10 sm:pb-15 md:pb-20'>
+            <h2 className='text-xl sm:text-2xl md:text-3xl font-semibold mb-4 sm:mb-6 md:mb-8'>Related Products</h2>
             <Swiper
-                slidesPerView={4}
-                spaceBetween={20}
+                breakpoints={{
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                }}
                 autoplay={{
-                    delay: 2500,
+                    delay: 1500,
                     disableOnInteraction: false,
                 }}
-                loop={true}
+                speed={500}
+                // loop={true}
+                loop={relatedProducts.length > 4} // Enable loop only if there are more than 4 slides
                 pagination={false}
                 navigation={false}
-                modules={[Pagination, Navigation, Autoplay]}
+                modules={[Autoplay, Pagination, Navigation]}
                 className="related-products-swiper"
             >
                 {relatedProducts?.map((product, index) => (
                     <SwiperSlide key={index}>
                         <NavLink to={`/shop-single-thumb/${product._id}`} className='cursor-pointer'>
-                            <div className='border border-gray-300 p-5 rounded-md space-y-4 flex flex-col items-center bg-[#EBE9E6] hover:shadow-lg transition-all duration-300'>
-                                <img src={product.image} alt={product.name} className='w-40 object-cover hover:scale-105 transition-transform' />
+                            <div className='border border-gray-300 p-3 sm:p-4 md:p-5 rounded-md space-y-4 flex flex-col items-center bg-[#EBE9E6] hover:shadow-lg transition-all duration-300'>
+                                <img src={product.image} alt={product.name} className='w-28 sm:w-32 md:w-40 object-cover hover:scale-105 transition-transform' />
 
                                 <p className='opacity-60 text-sm font-semibold cursor-pointer'>{product.category}</p>
-                                <p className='text-lg font-semibold cursor-pointer'>{product.name}</p>
-                                <p className='font-semibold text-red-500'>${product.price}.00</p>
+                                <p className='text-base md:text-lg font-semibold cursor-pointer'>{product.name}</p>
+                                <p className='font-semibold text-red-500 text-base md:text-lg'>${product.price}.00</p>
                             </div>
                         </NavLink>
                     </SwiperSlide>

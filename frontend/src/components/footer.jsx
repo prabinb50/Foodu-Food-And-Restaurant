@@ -1,16 +1,18 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 import React, { useState } from 'react'
 import { NavLink } from 'react-router'
+import { Bounce, toast } from 'react-toastify';
 
 export default function Footer() {
 
     // array of quick links
     const quickLinks = [
-        'Home',
-        'Pages',
-        'Menu',
-        'Blog',
-        'Contact'
+        { name: 'Home', url: '/' },
+        { name: 'Pages', url: '/pages' },
+        { name: 'Menu', url: '/menu' },
+        { name: 'Blog', url: '/blog' },
+        { name: 'Shop', url: '/shop' },
+        { name: 'Contact', url: '/contact-us' },
     ];
 
     // array of contact information
@@ -25,7 +27,19 @@ export default function Footer() {
     // function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Subscribed Successfully');
+        // alert('Subscribed Successfully');
+        // Display a toast notification
+        toast("Subscribed Successfully", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
         setEmail('');
     };
 
@@ -51,7 +65,7 @@ export default function Footer() {
                 {
                     quickLinks.map((eachLink, index) => (
                         <div key={index} className='opacity-75 space-y-2 flex flex-col '>
-                            <NavLink to='/' className='hover:text-red-500'>{eachLink}</NavLink>
+                            <NavLink to={eachLink.url} className='hover:text-red-500'>{eachLink.name}</NavLink>
                         </div>
                     ))
                 }

@@ -2,7 +2,7 @@ import { Dot, MoveLeft, MoveRight } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { format } from 'date-fns'
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 
 export default function NewsAndBlog() {
@@ -45,17 +45,16 @@ export default function NewsAndBlog() {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 cursor-pointer mt-10 gap-6'>
                 {
                     newsAndBlog?.map((eachItem, index) => (
-                        <div key={index} className='relative object-cover space-y-3'>
-                            <img src={eachItem.image} alt="" className='w-full rounded-md' />
+                        <div key={index} className='relative object-cover'>
+                            <NavLink to={`/blog/${eachItem._id}`}>
+                                <img src={eachItem.image} alt="" className='w-full rounded-md' />
+                            </NavLink>
                             <p className='absolute top-8 left-5 text-black border-none bg-white rounded-md text-xs px-2 py-1 font-semibold hover:text-red-500'>{eachItem.category}</p>
 
-
-                            {/* <p className='font-semibold text-lg hover:text-red-500 hover:underline'>{eachItem.description}</p>
-                            <p className='opacity-50 font-semibold text-sm flex'>{format(new Date(eachItem.date), 'dd MMMM, yyyy')}<span className='flex hover:text-red-500 hover:opacity-90'><Dot />{eachItem.author}</span></p> */}
-
-                            <NavLink to={`/blog/${eachItem._id}`} className='font-semibold text-lg hover:text-red-500 hover:underline'>{eachItem.description}</NavLink>
-                            <p className='opacity-50 font-semibold text-sm flex mt-2'>{format(new Date(eachItem.date), 'dd MMMM, yyyy')}<span className='flex hover:text-red-500 hover:opacity-90'><Dot />{eachItem.author}</span></p>
-
+                            <div className='mt-4'>
+                                <NavLink to={`/blog/${eachItem._id}`} className='font-semibold text-lg hover:text-red-500 hover:underline'>{eachItem.description}</NavLink>
+                                <p className='opacity-50 font-semibold text-sm flex mt-2'>{format(new Date(eachItem.date), 'dd MMMM, yyyy')}<span className='flex hover:text-red-500 hover:opacity-90'><Dot />{eachItem.author}</span></p>
+                            </div>
                         </div>
                     ))
                 }
