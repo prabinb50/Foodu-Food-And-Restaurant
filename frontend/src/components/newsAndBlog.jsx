@@ -29,7 +29,7 @@ export default function NewsAndBlog() {
 
 
     return (
-        <div className='w-11/12 md:w-10/12 lg:w-10/12 mx-auto mt-10 md:mt-20 pb-20'>
+        <div className='w-11/12 md:w-10/12 lg:w-10/12 mx-auto mt-10 md:mt-20 pb-15 md:pb-20'>
             {/* first child */}
             <div className="font-serif flex items-center justify-between flex-col text-center md:text-left">
                 <div className="flex justify-between items-center space-x-2">
@@ -58,24 +58,6 @@ export default function NewsAndBlog() {
                         </div>
                     ))
                 }
-
-                {/* second: middle child */}
-                {/* <div className='relative object-cover space-y-3'>
-                    <img src="/food.jpg" alt="" className='w-full rounded-md' />
-                    <p className='absolute top-8 left-5 text-black border-none bg-white rounded-md text-xs px-2 py-1 font-semibold hover:text-red-500'>FOOD</p>
-
-                    <p className='font-semibold text-lg hover:text-red-500 hover:underline'>This prefabricated passive are comfortable highly sustainable.</p>
-                    <p className='opacity-50 font-semibold text-sm flex'>18 MARCH, 2024 <span className='flex hover:text-red-500 hover:opacity-90'><Dot />MD SOHAG</span></p>
-                </div> */}
-
-                {/* second: right child */}
-                {/* <div className='relative object-cover space-y-3'>
-                    <img src="/pizza.jpg" alt="" className='w-full rounded-md' />
-                    <p className='absolute top-8 left-5 text-black border-none bg-white rounded-md text-xs px-2 py-1 font-semibold hover:text-red-500'>PIZZA</p>
-
-                    <p className='font-semibold text-lg hover:text-red-500 hover:underline'>Minuter him own clothes but observe country at the maintaining.</p>
-                    <p className='opacity-50 font-semibold text-sm flex'>18 MARCH, 2024 <span className='flex hover:text-red-500 hover:opacity-90'><Dot />MD SOHAG</span></p>
-                </div> */}
             </div>
 
         </div>

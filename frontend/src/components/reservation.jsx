@@ -14,6 +14,7 @@ export default function Reservation() {
     const [person, setPerson] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
+
     // function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,15 +28,21 @@ export default function Reservation() {
     }
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 mt-20'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 mt-10 md:mt-20 '>
             {/* First child: Image and items */}
-            <div className='relative'>
-                <img src="/reservation.jpg" alt="" className='w-full h-full object-cover' />
+            <div className='relative w-full h-[400px] md:h-[500px]'>
+                <img
+                    src="/reservation.jpg" alt=""
+                    className='w-full h-full object-cover shadow-md' loading="lazy" />
 
-                <div className='flex flex-col absolute top-5 -right-15 gap-5 mt-20'>
+                {/* Floating items container */}
+                <div className='flex flex-row lg:flex-col absolute lg:top-10 lg:right-[-15px] gap-3 sm:gap-5 transform translate-y-[-50%] sm:translate-y-0'>
                     {
                         items.map((items, index) => (
-                            <div key={index} className='border-none bg-white rounded-full px-9 py-5 flex flex-col items-center gap-2 cursor-pointer shadow-lg'>
+                            <div
+                                key={index}
+                                className='border-none bg-white rounded-full px-9 py-5 flex flex-col items-center gap-2 cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 touch-manipulation '
+                                role="button">
                                 <img src={items.image} alt="" className='object-cover w-15' />
                                 <p className='text-black text-sm font-semibold'>{items.name}</p>
                             </div>
@@ -45,25 +52,27 @@ export default function Reservation() {
             </div>
 
             {/* Second child: Reservation form */}
-            <div className='flex flex-col h-full space-y-4 py-5 px-5'>
-                <p className='text-xl text-red-500 font-semibold'>RESERVATION</p>
-                <p className='text-5xl font-bold'>Book A Table</p>
+            <div className='flex flex-col h-full space-y-3 sm:space-y-4 py-3 sm:py-5 px-5'>
+                <p className='text-lg sm:text-xl text-red-500 font-semibold'>RESERVATION</p>
+                <p className='text-3xl sm:text-4xl md:text-5xl font-bold'>Book A Table</p>
 
-                <form className='flex flex-col' onSubmit={handleSubmit}>
+                <form className='flex flex-col w-full mt-2 sm:mt-4' onSubmit={handleSubmit}>
                     <input
                         type="text"
                         placeholder='Enter your name'
                         required
-                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md'
+                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:outline-none'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
 
                     <input
-                        type="number"
+                        type="tel"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                         placeholder='Enter your number'
                         required
-                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md'
+                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:outline-none'
                         value={number}
                         onChange={(e) => setNumber(e.target.value)}
                     />
@@ -72,7 +81,9 @@ export default function Reservation() {
                         type="number"
                         placeholder='Number of person'
                         required
-                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md'
+                        min="1"
+                        max="10"
+                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:outline-none'
                         value={person}
                         onChange={(e) => setPerson(e.target.value)}
                     />
@@ -81,16 +92,17 @@ export default function Reservation() {
                         type="date"
                         placeholder='Enter date'
                         required
-                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md'
+                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:outline-none'
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
+                        min={new Date().toISOString().split('T')[0]}
                     />
 
                     <input
                         type="time"
                         placeholder='Enter time'
                         required
-                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md'
+                        className='block w-full p-2 mb-4 border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:outline-none'
                         value={time}
                         onChange={(e) => setTime(e.target.value)}
                     />
@@ -98,7 +110,7 @@ export default function Reservation() {
                     <input
                         type="submit"
                         value="Book Now"
-                        className='block w-full p-2 mb-4 bg-red-500 text-white font-semibold rounded-md cursor-pointer hover:bg-black'
+                        className='block w-full p-2 mb-4 bg-red-500 text-white font-semibold rounded-md cursor-pointer hover:bg-black transition-colors duration-300 focus:ring-1 focus:ring-offset-2 focus:ring-red-500 active:bg-red-700 touch-manipulation'
                     />
                 </form>
             </div>

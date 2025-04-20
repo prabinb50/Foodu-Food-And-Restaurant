@@ -13,16 +13,8 @@ import ContactUs from './pages/contactUs.jsx'
 import ShopPage from './pages/shopPage.jsx'
 import PageAboutUs from './pages/pageAboutUs.jsx'
 import ShopSingleThumb from './pages/shopSingleThumb.jsx'
-<<<<<<< HEAD
-<<<<<<< HEAD
 import MenuPage from './pages/menuPage.jsx'
-
-=======
 import { Bounce, ToastContainer, toast } from 'react-toastify';
->>>>>>> 258654faa61774b826a0bcb6954cf78283c6d203
-=======
-import { Bounce, ToastContainer, toast } from 'react-toastify';
->>>>>>> 258654faa61774b826a0bcb6954cf78283c6d203
 
 export function Root() {
   return (
@@ -52,11 +44,10 @@ export function Root() {
         <Route path="/contact-us" element={<ContactUs></ContactUs>} />
         <Route path="/shop" element={<ShopPage></ShopPage>} />
         <Route path="/pages" element={<PageAboutUs />} />
-        <Route path="/menu" element={<MenuPage/>} />
+        <Route path="/menu" element={<MenuPage />} />
 
         <Route path="/blog/:id" element={<BlogPage />} />
         <Route path="/shop-single-thumb/:id" element={<ShopSingleThumb></ShopSingleThumb>} />
-
       </Routes>
 
       <div className='bg-gray-100 pb-10'>
